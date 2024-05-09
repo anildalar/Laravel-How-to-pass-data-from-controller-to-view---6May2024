@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Bird;
+use App\Models\Bird; //Eleqouent
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB; //QueryBuilder
 
 class BirdSeeder extends Seeder
 {
