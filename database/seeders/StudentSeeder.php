@@ -26,11 +26,24 @@ class StudentSeeder extends Seeder
         // User::factory(10)->create();
         //QueryBuilder
         DB::table('students')->insert([
-            'name' => 'yash',
-            'surname' => 'mali',
-            'fname' => 'bhwarlalji',
-            'mname' => 'pinkiji',
-            'mobno' => '798798987968',
+            [
+
+                'name' => 'yash',
+                'surname' => 'mali',
+                'fname' => 'bhwarlalji',
+                'mname' => 'pinkiji',
+                'mobno' => '798798987968',
+                'mobno2' => '798798987968',
+            ],
+            [
+
+                'name' => 'Anil',
+                'surname' => 'mali',
+                'fname' => 'Ramesh',
+                'mname' => 'Vidhya',
+                'mobno' => '99999999',
+                'mobno2' => '88888888',
+            ],
         ]);
     }
 }
