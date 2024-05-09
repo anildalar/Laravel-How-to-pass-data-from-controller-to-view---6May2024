@@ -24,7 +24,7 @@ class StudentSeeder extends Seeder
     {
         //
         // User::factory(10)->create();
-
+        //QueryBuilder
         DB::table('students')->insert([
             'name' => 'yash',
             'surname' => 'mali',
