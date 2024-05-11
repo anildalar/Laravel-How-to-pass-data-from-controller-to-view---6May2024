@@ -4,6 +4,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CityController; //Statement
+use App\Http\Controllers\CarController; //Statement
+use App\Http\Controllers\BikeController; //Statement
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,3 +49,7 @@ Route::prefix('rj')->group(function () {
         return 'Hello from bhopal route';
     }); */
 });
+
+// ClassName::method() Scope Resolution Opearator
+Route::get('/mycars',[CarController::class,'index']);
+Route::get('/mybikes',[BikeController::class,'index']);
