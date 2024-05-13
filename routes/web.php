@@ -6,6 +6,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CityController; //Statement
 use App\Http\Controllers\CarController; //Statement
 use App\Http\Controllers\BikeController; //Statement
+use App\Http\Controllers\CricketPlayerController; //Statement
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -53,3 +55,10 @@ Route::prefix('rj')->group(function () {
 // ClassName::method() Scope Resolution Opearator
 Route::get('/mycars',[CarController::class,'index']);
 Route::get('/mybikes',[BikeController::class,'index']);
+
+
+//Class::method()
+
+// :: is a scope resolution operation
+
+Route::get('/cricketplayers',[CricketPlayerController::class,'index']);
