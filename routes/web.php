@@ -7,6 +7,7 @@ use App\Http\Controllers\CityController; //Statement
 use App\Http\Controllers\CarController; //Statement
 use App\Http\Controllers\BikeController; //Statement
 use App\Http\Controllers\CricketPlayerController; //Statement
+use App\Http\Controllers\LaptopController;
 
 
 Route::get('/', function () {
@@ -62,3 +63,6 @@ Route::get('/mybikes',[BikeController::class,'index']);
 // :: is a scope resolution operation
 
 Route::get('/cricketplayers',[CricketPlayerController::class,'index']);
+
+
+Route::resource('laptops', LaptopController::class);
