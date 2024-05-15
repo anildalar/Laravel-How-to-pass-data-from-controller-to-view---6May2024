@@ -8,6 +8,7 @@ use App\Http\Controllers\CarController; //Statement
 use App\Http\Controllers\BikeController; //Statement
 use App\Http\Controllers\CricketPlayerController; //Statement
 use App\Http\Controllers\LaptopController;
+use App\Http\Controllers\NewsController;
 
 
 Route::get('/', function () {
@@ -66,3 +67,5 @@ Route::get('/cricketplayers',[CricketPlayerController::class,'index']);
 
 
 Route::resource('laptops', LaptopController::class);
+
+Route::resource('news',NewsController::class);
