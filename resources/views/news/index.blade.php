@@ -6,6 +6,11 @@
         <title>News</title>
     </head>
     <body>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <h1>Todays News</h1>
         @foreach ($news as $nsw)
             <h1>{{ $nsw->title}}</h1>

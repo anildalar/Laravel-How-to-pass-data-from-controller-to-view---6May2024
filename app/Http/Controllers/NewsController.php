@@ -16,7 +16,8 @@ class NewsController extends Controller
         //1. QueryBuilder
 
         //2. Eleqoent ORM (Object Relatinal Mapper)
-        $news = News::all();
+        $news = News::orderBy('created_at', 'desc')->get();
+
         return view('news.index',compact('news'));
     }
 
@@ -32,11 +33,16 @@ class NewsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource/data in storage = Database.
      */
     public function store(Request $request)
     {
-        return 'store method';
+        //dd($request->all());
+        // I want to insert record
+        //1. QueryBuilder
+        //2. Eleqoent ORM (Object Relatinal Mapper)
+        News::create($request->all()); //Create method is used for inserting single record
+        return redirect()->route('news.create')->with('success','Post created successfully.');;
     }
 
     /**

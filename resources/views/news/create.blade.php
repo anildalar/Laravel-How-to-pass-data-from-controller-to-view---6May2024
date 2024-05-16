@@ -11,10 +11,10 @@
             @csrf
             <label for="ttl">News Title</label>
             <input type="text" name="title" id="ttl"/><br />
-            <label for="desc">News Title</label>
+            <label for="desc">News Description</label>
             <textarea name="description" id="desc" ></textarea><br />
-            <label for="img_url">News Title</label>
-            <input type="text" name="image_url" id="img_url"/><br />
+            <label for="img_url">News Image URL</label>
+            <input type="text" name="image_url" id="img_url" size="100"/><br />
             <input type="submit" >
         </form>
     </body>
