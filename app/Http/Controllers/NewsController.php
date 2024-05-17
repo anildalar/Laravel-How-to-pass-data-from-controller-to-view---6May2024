@@ -22,7 +22,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the add form for creating a new resource.
      */
     public function create()
     {
@@ -54,11 +54,16 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the edit form for editing the specified resource.
      */
     public function edit(News $news)
     {
-        //
+        
+        // READ operation
+        //Equoquent 
+        $news = News::find($news->id);
+        //dd($news->title);
+        return view('news.edit',compact('news'));
     }
 
     /**
@@ -66,7 +71,10 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        //dd($news->id);
+        //I want to update the record using Eleqouent
+        News::where('id', $news->id)->update($request->only(['title', 'description', 'image_url']));
+        return redirect()->route('news.index')->with('success', 'News updated successfully.');
     }
 
     /**

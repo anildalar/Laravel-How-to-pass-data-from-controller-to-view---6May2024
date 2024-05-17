@@ -12,11 +12,32 @@
             </div>
         @endif
         <h1>Todays News</h1>
-        @foreach ($news as $nsw)
-            <h1>{{ $nsw->title}}</h1>
-            <p>{{ $nsw->description}}</p>
-            <img src={{$nsw->image_url}} />
-            <hr />
-        @endforeach
+        <table border="1" cellspacing="0" cellpadding="0">
+            <thead style="text-align:center">
+                <tr>
+                    <td>News Id</td>
+                    <td>News Title</td>
+                    <td>News Description</td>
+                    <td>Image</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @foreach ($news as $nsw)
+                    <tr>
+                        <th>{{ $nsw->id}}</th>
+                        <th>{{ $nsw->title}}</th>
+                        <th>{{ $nsw->description}}</th>
+                        <th><img width="100" src={{$nsw->image_url}} /></th>
+                        <th>
+                            <a href="#">View</a>
+                            <a href="/news/{{$nsw->id}}/edit">Edit</a>
+                            <a href="#">Delete</a>
+                        </th>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </body>
 </html>
