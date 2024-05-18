@@ -33,7 +33,11 @@
                         <th>
                             <a href="#">View</a>
                             <a href="/news/{{$nsw->id}}/edit">Edit</a>
-                            <a href="#">Delete</a>
+                            <form method="POST" action="/news/{{$nsw->id}}">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete newsid {{$nsw->id}}')">
+                            </form>
                         </th>
                     </tr>
                 @endforeach

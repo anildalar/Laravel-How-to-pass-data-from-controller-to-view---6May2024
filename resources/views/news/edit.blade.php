@@ -10,7 +10,7 @@
         
         <form method="POST" action="/news/{{$news->id}}">
             @csrf
-            @method('PUT')
+            @method('PATCH')
             <label for="ttl">News Title</label>
             <input type="text" name="title" value="{{$news->title}}" size="100" id="ttl"/><br />
             <label for="desc">News Description</label>

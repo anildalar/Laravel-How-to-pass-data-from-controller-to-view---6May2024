@@ -42,7 +42,7 @@ class NewsController extends Controller
         //1. QueryBuilder
         //2. Eleqoent ORM (Object Relatinal Mapper)
         News::create($request->all()); //Create method is used for inserting single record
-        return redirect()->route('news.create')->with('success','Post created successfully.');;
+        return redirect()->route('news.create')->with('success','News created successfully.');;
     }
 
     /**
@@ -51,6 +51,7 @@ class NewsController extends Controller
     public function show(News $news)
     {
         //
+        return 'show';
     }
 
     /**
@@ -83,5 +84,7 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         //
+        $news->delete();
+        return redirect()->route('news.index')->with('success', 'News deleted successfully.');
     }
 }
