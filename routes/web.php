@@ -12,8 +12,15 @@ use App\Http\Controllers\NewsController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home'); // views/welcome.blade.php
 });
+Route::get('/product', function () {
+    return view('product'); // views/product.blade.php
+});
+Route::get('/search', function () {
+    return view('search'); // views/search.blade.php
+});
+
 
 //ClassName::method(ActualArg1,ActualArg2)
 //ClassName::method('string',cbfn) Callback function
